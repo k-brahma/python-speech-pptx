@@ -1,3 +1,4 @@
+import sys
 from pptx import Presentation
 from pyttsx3 import init
 import time
@@ -19,5 +20,9 @@ def read_ppt(file_path, speed=100):  # speedパラメータを追加
                         time.sleep(0.5)
 
 if __name__ == "__main__":
-    ppt_file = "sample1.pptx"
-    read_ppt(ppt_file, speed=125)  # ここでspeedを渡す
+    if len(sys.argv) < 2:
+        print("コマンドラインからの呼び出し時には引数としてファイル名を指定してください")
+        sys.exit(1)
+
+    ppt_file = sys.argv[1]
+    read_ppt(ppt_file, speed=125)
