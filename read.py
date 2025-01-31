@@ -22,6 +22,7 @@ def read_ppt(file_path, speed=100):  # speedパラメータを追加
 if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("コマンドラインからの呼び出し時には引数としてファイル名を指定してください")
+        print("例: python read.py data/sample.pptx")
         sys.exit(1)
 
     ppt_file = sys.argv[1]
